@@ -19,9 +19,9 @@
                 &kp LSHFT &kp A  &kp S  &kp D  &kp F  &kp G               &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LCTRL &kp Z  &kp X  &kp C  &kp V  &kp B               &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp BSLH
                                  &kp LBKT &kp RBKT                                      &kp PLUS &kp EQUAL
-                                            &kp RAISE &kp SPACE           &kp RET  &kp LOWER
-                                            &kp TAB   &kp HOME            &kp END  &kp DEL
-                                            &kp BSPC  &kp GRAVE           &kp LGUI &kp LALT
+                                            &mo RAISE  &kp SPACE          &kp RET  &mo LOWER
+                                            &mo ADJUST &kp HOME           &kp END  &kp DEL
+                                            &kp BSPC   &kp GRAVE          &kp LGUI &kp LALT
             >;
         };
 

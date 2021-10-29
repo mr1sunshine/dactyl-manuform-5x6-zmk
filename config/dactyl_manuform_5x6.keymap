@@ -21,7 +21,7 @@
                 &sk LCTRL &kp Z    &kp X     &kp C     &kp V         &kp B                   &kp N       &kp M         &kp COMMA   &kp DOT        &kp FSLH &kp CAPS
                                    &none     &none                                                                     &kp PLUS    &kp EQUAL
                                                        &kp LGUI      &lt LWR SPACE           &lt RSE TAB &mt LSHFT RET
-                                                       &none         &kp LALT                &kp BSPC    &none
+                                                       &kp LALT      &none                   &none       &kp BSPC
                                                        &none         &none                   &none       &none
             >;
         };
@@ -34,8 +34,8 @@
                 &sk LCTRL &kp STAR &kp PRCNT &kp CARET &kp DLLR      &kp FSLH                &none       &kp RBKT      &kp RBKT    &none          &none    &none
                                    &none     &none                                                                     &none       &none
                                                        &trans        &trans                  &trans      &trans
+                                                       &trans        &trans                  &trans      &kp DEL
                                                        &trans        &trans                  &trans      &trans
-                                                       &trans        &trans                  &kp DEL     &trans
             >;
         };
 

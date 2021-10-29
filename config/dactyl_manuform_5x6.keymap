@@ -19,7 +19,7 @@
                 &kp LSHFT &kp A  &kp S  &kp D  &kp F  &kp G               &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LCTRL &kp Z  &kp X  &kp C  &kp V  &kp B               &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp BSLH
                                  &kp LBKT &kp RBKT                                      &kp PLUS &kp EQUAL
-                                            &mo LWR  &kp SPACE            &kp RET  &kp RSE
+                                            &mo LWR  &kp SPACE            &kp RET  &mo RSE
                                             &kp N1   &kp HOME             &kp END  &kp DEL
                                             &kp BSPC &kp GRAVE            &kp LGUI &kp LALT
             >;

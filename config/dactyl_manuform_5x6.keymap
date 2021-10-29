@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
-// #define LOWER   1
+#define LWR 1
 // #define RAISE   2
 // #define ADJUST  3
 
@@ -19,24 +19,24 @@
                 &kp LSHFT &kp A  &kp S  &kp D  &kp F  &kp G               &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LCTRL &kp Z  &kp X  &kp C  &kp V  &kp B               &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp BSLH
                                  &kp LBKT &kp RBKT                                      &kp PLUS &kp EQUAL
-                                            &kp N1   &kp SPACE            &kp RET  &kp N1
+                                            &mo LWR  &kp SPACE            &kp RET  &kp N1
                                             &kp N1   &kp HOME             &kp END  &kp DEL
                                             &kp BSPC &kp GRAVE            &kp LGUI &kp LALT
             >;
         };
 
-        // lower_layer {
-        //     bindings = <
-        //         &kp F12 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                &kp F6 &kp F7   &kp F8   &kp F9 &kp F0    &kp F11
-        //         &trans  &trans &trans &trans &trans &trans                &trans &trans   &trans   &trans &trans    &trans
-        //         &trans  &trans &trans &trans &trans &trans                &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans
-        //         &trans  &trans &trans &trans &trans &trans                &trans &trans   &trans   &trans &trans    &trans
-        //                        &trans &trans                                              &trans &trans
-        //                                      &trans &trans                &trans &trans
-        //                                      &trans &trans                &trans &trans
-        //                                      &trans &trans                &trans &trans
-        //     >;
-        // };
+        lower_layer {
+            bindings = <
+                &kp F12 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                &kp F6 &kp F7   &kp F8   &kp F9 &kp F0    &kp F11
+                &trans  &trans &trans &trans &trans &trans                &trans &trans   &trans   &trans &trans    &trans
+                &trans  &trans &trans &trans &trans &trans                &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans
+                &trans  &trans &trans &trans &trans &trans                &trans &trans   &trans   &trans &trans    &trans
+                               &trans &trans                                              &trans &trans
+                                             &trans &trans                &trans &trans
+                                             &trans &trans                &trans &trans
+                                             &trans &trans                &trans &trans
+            >;
+        };
 
         // raise_layer {
         //     bindings = <

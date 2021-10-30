@@ -16,7 +16,7 @@
         default_layer {
             bindings = <
                 &kp ESC   &none    &none     &none     &none         &none                   &none       &none         &none       &none          &none    &none
-                &none     &kp Q    &kp W     &kp E     &kp R         &kp T                   &kp Y       &kp U         &kp I       &kp O          &kp P    &none
+                &kp TAB   &kp Q    &kp W     &kp E     &kp R         &kp T                   &kp Y       &kp U         &kp I       &kp O          &kp P    &none
                 &sk LSHFT &kp A    &kp S     &kp D     &kp F         &kp G                   &kp H       &kp J         &kp K       &kp L          &kp SEMI &none
                 &sk LCTRL &kp Z    &kp X     &kp C     &kp V         &kp B                   &kp N       &kp M         &kp COMMA   &kp DOT        &kp FSLH &kp CAPS
                                    &none     &none                                                                     &kp PLUS    &kp EQUAL
@@ -31,7 +31,7 @@
                 &none     &none    &none     &none     &none         &none                   &none       &none         &none       &none          &none    &none
                 &none     &kp EXCL &kp AT    &kp PLUS  &kp EQUAL     &kp BSLH                &kp GRAVE   &kp LBRC      &kp RBRC    &none          &none    &none
                 &sk LSHFT &kp AMPS &kp HASH  &kp MINUS &kp LS(MINUS) &kp PIPE                &kp TILDE   &kp LS(N9)    &kp LS(N0)  &kp SQT        &kp DQT  &none
-                &sk LCTRL &kp STAR &kp PRCNT &kp CARET &kp DLLR      &kp FSLH                &none       &kp RBKT      &kp RBKT    &none          &none    &none
+                &sk LCTRL &kp STAR &kp PRCNT &kp CARET &kp DLLR      &kp FSLH                &none       &kp LBKT      &kp RBKT    &none          &none    &none
                                    &none     &none                                                                     &none       &none
                                                        &trans        &trans                  &trans      &trans
                                                        &trans        &trans                  &trans      &kp DEL

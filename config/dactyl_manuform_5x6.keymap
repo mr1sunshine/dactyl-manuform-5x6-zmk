@@ -7,9 +7,9 @@
 #define LWR 1
 #define RSE 2
 
-#define FLLSCRN  LS(LA(LG(F)))
-#define NXTSCRN  LS(LA(LG(N)))
-#define MXSCRN  LS(LA(LG(M)))
+#define FLLSCRN LS(LG(LA(F)))
+#define NXTSCRN LS(LG(LA(N)))
+#define MXSCRN LS(LG(LA(M)))
 #define DLTROW LA(LS(BSPC))
 #define RPLACE LG(F2)
 

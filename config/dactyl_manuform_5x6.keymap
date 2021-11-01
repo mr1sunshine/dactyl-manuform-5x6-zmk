@@ -7,9 +7,9 @@
 #define LWR 1
 #define RSE 2
 
-#define FLLSCRN LS(LG(LA(F)))
-#define NXTSCRN LS(LG(LA(N)))
-#define MXSCRN LS(LG(LA(M)))
+#define FLLSCRN LC(LG(LA(F)))
+#define NXTSCRN LC(LG(LA(N)))
+#define MXSCRN LC(LG(LA(M)))
 #define DLTROW LA(LS(BSPC))
 #define RPLACE LG(F2)
 
@@ -48,7 +48,7 @@
                 &none     &none    &none     &none     &none         &none                   &none       &none         &none       &none          &none    &none
                 &none     &none    &kp N7    &kp N8    &kp N9        &none                   &kp PG_UP   &kp LC(LEFT)  &kp UP      &kp LC(RIGHT)  &none    &kp K_VOL_UP
                 &sk LCTRL &none    &kp N4    &kp N5    &kp N6        &none                   &kp PG_DN   &kp LEFT      &kp DOWN    &kp RIGHT      &none    &kp K_VOL_DN
-                &sk LSHFT &none    &kp N1    &kp N2    &kp N3        &kp N0                  &kp LS(LG(LA(N))) &kp LS(LG(LA(M)))    &kp LS(LG(LA(F))) &kp LG(LS(UP)) &none    &kp K_MUTE
+                &sk LSHFT &none    &kp N1    &kp N2    &kp N3        &kp N0                  &kp NXTSCRN &kp MXSCRN    &kp FLLSCRN &none    &kp K_MUTE
                                    &none     &none                                                                     &none       &none
                                                        &trans        &trans                  &trans      &trans
                                                        &trans        &trans                  &trans      &trans

@@ -34,27 +34,27 @@ jobs:
       - name: West Zephyr export
         run: west zephyr-export
       - name: West Build (Dactyl Manuform 5x6 Left)
-        run: west build -s zmk/app -b bluemicro840_v1 -- -DSHIELD=dactyl_manuform_5x6_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b nice_nano -- -DSHIELD=dactyl_manuform_5x6_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Dactyl Manuform 5x6 DTS File
         if: ${{ always() }}
-        run: cat -n build/zephyr/bluemicro840_v1.dts.pre.tmp
+        run: cat -n build/zephyr/nice_nano.dts.pre.tmp
       - name: Dactyl Manuform 5x6 Left Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 dactyl_manuform_5x6_left_bluemicro840_v1.uf2
+        run: cp build/zephyr/zmk.uf2 dactyl_manuform_5x6_left_nice_nano.uf2
       - name: Archive (Dactyl Manuform 5x6 Left)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: dactyl_manuform_5x6_left_bluemicro840_v1.uf2
+          path: dactyl_manuform_5x6_left_nice_nano.uf2
       - name: West Build (Dactyl Manuform 5x6 Right)
-        run: west build --pristine -s zmk/app -b bluemicro840_v1 -- -DSHIELD=dactyl_manuform_5x6_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=dactyl_manuform_5x6_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Dactyl Manuform 5x6 Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 dactyl_manuform_5x6_right_bluemicro840_v1.uf2
+        run: cp build/zephyr/zmk.uf2 dactyl_manuform_5x6_right_nice_nano.uf2
       - name: Archive (Dactyl Manuform 5x6 Right)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: dactyl_manuform_5x6_right_bluemicro840_v1.uf2
+          path: dactyl_manuform_5x6_right_nice_nano.uf2

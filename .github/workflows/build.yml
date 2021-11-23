@@ -3,12 +3,47 @@ on: [push, pull_request, workflow_dispatch]
 name: Build
 
 jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    name: Fetch Build Keyboards
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install yaml2json
+        run: python3 -m pip install remarshal
+      - id: set-matrix
+        name: Fetch Build Matrix
+        run: |
+          matrix=$(yaml2json build.yaml | jq -c .)
+          yaml2json build.yaml
+          echo "::set-output name=matrix::${matrix}"
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:2.4
+      image: zmkfirmware/zmk-build-arm:2.5
+    needs: matrix
     name: Build
+    strategy:
+      fail-fast: false
+      matrix: ${{fromJson(needs.matrix.outputs.matrix)}}
     steps:
+      - name: Prepare variables
+        id: variables
+        run: |
+          if [ -n "${{ matrix.shield }}" ]; then
+            EXTRA_CMAKE_ARGS="-DSHIELD=${{ matrix.shield }}"
+            ARTIFACT_NAME="${{ matrix.shield }}-${{ matrix.board }}-zmk"
+            DISPLAY_NAME="${{ matrix.shield }} - ${{ matrix.board }}"
+          else
+            EXTRA_CMAKE_ARGS=
+            DISPLAY_NAME="${{ matrix.board }}"
+            ARTIFACT_NAME="${{ matrix.board }}-zmk"
+          fi
+          echo ::set-output name=extra-cmake-args::${EXTRA_CMAKE_ARGS}
+          echo ::set-output name=artifact-name::${ARTIFACT_NAME}
+          echo ::set-output name=display-name::${DISPLAY_NAME}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Cache west modules
@@ -33,28 +68,28 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
-      - name: West Build (Dactyl Manuform 5x6 Left)
-        run: west build -s zmk/app -b bluemicro840_v1 -- -DSHIELD=dactyl_manuform_5x6_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Dactyl Manuform 5x6 DTS File
+      - name: West Build (${{ steps.variables.outputs.display-name }})
+        run: |
+          west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
+      - name: ${{ steps.variables.outputs.display-name }} DTS File
         if: ${{ always() }}
-        run: cat -n build/zephyr/bluemicro840_v1.dts.pre.tmp
-      - name: Dactyl Manuform 5x6 Left Kconfig file
+        run: |
+          if [ -f "build/zephyr/${{ matrix.board }}.dts.pre.tmp" ]; then cat -n build/zephyr/${{ matrix.board }}.dts.pre.tmp; fi
+          if [ -f "build/zephyr/zephyr.dts" ]; then cat -n build/zephyr/zephyr.dts; fi
+      - name: ${{ steps.variables.outputs.display-name }} Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
-      - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 dactyl_manuform_5x6_left_bluemicro840_v1.uf2
-      - name: Archive (Dactyl Manuform 5x6 Left)
+      - name: Rename artifacts
+        run: |
+          mkdir build/artifacts
+          if [ -f build/zephyr/zmk.uf2 ]
+          then
+            cp build/zephyr/zmk.uf2 "build/artifacts/${{ steps.variables.outputs.artifact-name }}.uf2"
+          elif [ -f build/zephyr/zmk.hex ]
+          then
+            cp build/zephyr/zmk.hex "build/artifacts/${{ steps.variables.outputs.artifact-name }}.hex"
+          fi
+      - name: Archive (${{ steps.variables.outputs.display-name }})
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: dactyl_manuform_5x6_left_bluemicro840_v1.uf2
-      - name: West Build (Dactyl Manuform 5x6 Right)
-        run: west build --pristine -s zmk/app -b bluemicro840_v1 -- -DSHIELD=dactyl_manuform_5x6_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Dactyl Manuform 5x6 Right Kconfig file
-        run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
-      - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 dactyl_manuform_5x6_right_bluemicro840_v1.uf2
-      - name: Archive (Dactyl Manuform 5x6 Right)
-        uses: actions/upload-artifact@v2
-        with:
-          name: firmware
-          path: dactyl_manuform_5x6_right_bluemicro840_v1.uf2
+          path: build/artifacts

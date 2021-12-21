@@ -21,7 +21,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&mo>, <&kp>;
         };
     };
 
@@ -35,7 +35,7 @@
                 &sk LCTRL &kp A    &kp S     &kp D     &kp F         &kp G                   &kp H           &kp J         &kp K       &kp L          &kp SEMI &none
                 &sk LSHFT &kp Z    &kp X     &kp C     &kp V         &kp B                   &kp N           &kp M         &kp COMMA   &kp DOT        &kp FSLH &kp CAPS
                                    &none     &none                                                                         &kp DLTROW  &kp RPLACE
-                                                       &kp LGUI      &lt LWR SPACE           &lt RSE TAB     &mt LSHFT RET
+                                                       &kp LGUI      &lt LWR SPACE           &ht_bal RSE TAB &mt LSHFT RET
                                                        &kp LALT      &none                   &none           &kp BSPC
                                                        &none         &none                   &none           &none
             >;

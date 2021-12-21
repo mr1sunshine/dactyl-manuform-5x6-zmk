@@ -14,19 +14,30 @@
 #define RPLACE LG(F2)
 
 / {
+    behaviors {
+        ht_bal: behavior_hold_tap_balanced {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_BALANCED";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &kp ESC   &none    &none     &none     &none         &bt BT_CLR              &bt BT_CLR  &none         &none       &none          &none    &none
-                &kp TAB   &kp Q    &kp W     &kp E     &kp R         &kp T                   &kp Y       &kp U         &kp I       &kp O          &kp P    &none
-                &sk LCTRL  &kp A    &kp S     &kp D     &kp F         &kp G                   &kp H       &kp J         &kp K       &kp L          &kp SEMI &none
-                &sk LSHFT &kp Z    &kp X     &kp C     &kp V         &kp B                   &kp N       &kp M         &kp COMMA   &kp DOT        &kp FSLH &kp CAPS
-                                   &none     &none                                                                     &kp DLTROW  &kp RPLACE
-                                                       &kp LGUI      &lt LWR SPACE           &lt RSE TAB &mt LSHFT RET
-                                                       &kp LALT      &none                   &none       &kp BSPC
-                                                       &none         &none                   &none       &none
+                &kp ESC   &none    &none     &none     &none         &bt BT_CLR              &bt BT_CLR      &none         &none       &none          &none    &none
+                &kp TAB   &kp Q    &kp W     &kp E     &kp R         &kp T                   &kp Y           &kp U         &kp I       &kp O          &kp P    &none
+                &sk LCTRL &kp A    &kp S     &kp D     &kp F         &kp G                   &kp H           &kp J         &kp K       &kp L          &kp SEMI &none
+                &sk LSHFT &kp Z    &kp X     &kp C     &kp V         &kp B                   &kp N           &kp M         &kp COMMA   &kp DOT        &kp FSLH &kp CAPS
+                                   &none     &none                                                                         &kp DLTROW  &kp RPLACE
+                                                       &kp LGUI      &lt LWR SPACE           &lt RSE TAB     &mt LSHFT RET
+                                                       &kp LALT      &none                   &none           &kp BSPC
+                                                       &none         &none                   &none           &none
             >;
         };
 

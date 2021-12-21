@@ -15,11 +15,11 @@
 
 / {
     behaviors {
-        ht_bal: behavior_hold_tap_balanced {
+        ht_hld: behavior_hold_tap_hold_preferred {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP_BALANCED";
+            label = "HOLD_TAP_HOLD_PREFERRED";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
             bindings = <&mo>, <&kp>;
         };
@@ -35,7 +35,7 @@
                 &sk LCTRL &kp A    &kp S     &kp D     &kp F         &kp G                   &kp H           &kp J         &kp K       &kp L          &kp SEMI &none
                 &sk LSHFT &kp Z    &kp X     &kp C     &kp V         &kp B                   &kp N           &kp M         &kp COMMA   &kp DOT        &kp FSLH &kp CAPS
                                    &none     &none                                                                         &kp DLTROW  &kp RPLACE
-                                                       &kp LGUI      &lt LWR SPACE           &ht_bal RSE TAB &mt LSHFT RET
+                                                       &kp LGUI      &lt LWR SPACE           &ht_hld RSE TAB &mt LSHFT RET
                                                        &kp LALT      &none                   &none           &kp BSPC
                                                        &none         &none                   &none           &none
             >;

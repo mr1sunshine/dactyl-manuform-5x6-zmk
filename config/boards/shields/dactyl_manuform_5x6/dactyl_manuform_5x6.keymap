@@ -32,7 +32,7 @@
                 &trans  &trans &trans &trans &trans &trans                &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans
                 &trans  &trans &trans &trans &trans &trans                &trans &trans   &trans   &trans &trans    &trans
                                &trans &trans                                              &trans &trans
-                                             &trans &trans                &trans &mo ADJ
+                                             &trans &mo ADJ               &trans &mo ADJ
                                              &trans &trans                &trans &trans
                                              &trans &trans                &trans &trans
             >;

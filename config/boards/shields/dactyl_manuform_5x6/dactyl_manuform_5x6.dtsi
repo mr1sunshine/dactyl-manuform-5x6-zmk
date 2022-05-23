@@ -25,8 +25,8 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)                   RC(2,11) RC(2,
 RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)                   RC(3,11) RC(3,10) RC(3,9) RC(3,8) RC(3,7) RC(3,6)
                 RC(4,2) RC(4,3)                                                     RC(4,9) RC(4,8)
                                 RC(4,4) RC(4,5)                   RC(4,11) RC(4,10)
-                                        RC(5,4) RC(5,5)  RC(5,11) RC(5,10)
-                                        RC(5,2) RC(5,3)  RC(5,9)  RC(5,8)
+                                RC(5,4) RC(5,5)                   RC(5,11) RC(5,10)
+                                                RC(5,3)  RC(5,9)  
         >;
     };
 
@@ -34,14 +34,14 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)                   RC(3,11) RC(3,
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
 
-        diode-direction = "col2row";
+        diode-direction = "row2col";
         row-gpios
-            = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&pro_micro 19 (GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 15 (GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 14 (GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 10 (GPIO_ACTIVE_HIGH)>
             ;
 
     };

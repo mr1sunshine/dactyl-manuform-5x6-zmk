@@ -51,9 +51,9 @@
         adjust_layer {
             bindings = <
                 &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none            &none       &none  &none &none &none &none
-                &none &bt BT_SEL 1 &out OUT_USB &none        &reset       &none            &none       &reset &none &none &none &none
-                &none &bt BT_SEL 2 &out OUT_BLE &none        &none        &none            &none       &none  &none &none &none &none
-                &none &bt BT_SEL 3 &bt BT_CLR   &none        &none        &bootloader      &bootloader &none  &none &none &none &none
+                &none &none        &out OUT_BLE &none        &reset       &none            &none       &reset &none &none &none &none
+                &none &none        &out OUT_USB &none        &none        &none            &none       &none  &none &none &none &none
+                &none &none        &none        &bt BT_CLR   &none        &bootloader      &bootloader &none  &none &none &none &none
                                    &none        &none                                                         &none &none
                                                 &none        &none        &none            &none &none &none
                                                              &none        &none            &none &none

@@ -19,7 +19,7 @@
                 &kp LCTRL &kp A  &kp S  &kp D  &kp F  &kp G               &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp APOS
                 &kp LSHFT &kp Z  &kp X  &kp C  &kp V  &kp B               &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
                                  &kp PG_DN &kp PG_UP                                    &kp LBKT  &kp RBKT
-                                          &kp LCMD &kp LCTRL &kp LALT    &kp BSPC  &kp SPACE &kp RET
+                                          &kp LCMD &kp LCTRL &kp LALT    &kp SPACE &kp BSPC  &kp RET
                                                    &mo LWR  &mo ADJ      &mo ADJ  &mo LWR
             >;
         };
@@ -27,10 +27,10 @@
         lower_layer {
             bindings = <
                 &kp GRAVE &kp F1 &kp F2 &kp F3 &kp F4 &kp F5              &kp F6 &kp F7   &kp F8   &kp F9 &kp F10   &kp F11
-                &trans &trans &trans &trans &trans &trans                 &trans &trans   &trans   &kp F11 &kp F12  &kp BSLH
-                &trans  &trans &trans &trans &trans &trans                &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-                &trans  &trans &trans &trans &trans &trans                &trans &trans   &trans   &trans &trans    &trans
-                               &trans &trans                                              &trans &trans
+                &trans    &trans &trans &trans &trans &trans              &trans &trans   &trans   &kp F11 &kp F12  &kp BSLH
+                &trans    &trans &trans &trans &trans &trans              &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+                &trans    &trans &trans &trans &trans &trans              &trans &trans   &trans   &trans &trans    &trans
+                                 &trans &trans                                              &trans &trans
                                              &trans &mo ADJ &trans        &trans &mo ADJ &trans
                                                     &trans &trans         &trans &trans
             >;

@@ -19,8 +19,8 @@
                 &kp LCTRL &kp A  &kp S  &kp D  &kp F  &kp G               &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp APOS
                 &kp LSHFT &kp Z  &kp X  &kp C  &kp V  &kp B               &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
                                  &kp PG_DN &kp PG_UP                                    &kp LBKT  &kp RBKT
-                                          &kp LCMD &kp LCTRL &kp LALT    &kp SPACE &kp BSPC  &kp RET
-                                                   &mo LWR  &mo ADJ      &mo ADJ  &mo LWR
+                                          &kp LCMD &kp LCTRL &kp LALT     &kp RET &kp BSPC &kp SPACE
+                                                   &mo LWR  &mo ADJ       &mo ADJ  &mo LWR
             >;
         };
 

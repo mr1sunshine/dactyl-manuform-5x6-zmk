@@ -23,6 +23,16 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&kp>;
         };
+
+        bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     keymap {
@@ -30,14 +40,14 @@
 
         default_layer {
             bindings = <
-                &kp ESC   &none    &none     &none     &none         &bt BT_CLR              &bt BT_CLR      &none         &none       &none          &none    &none
-                &kp TAB   &kp Q    &kp W     &kp E     &kp R         &kp T                   &kp Y           &kp U         &kp I       &kp O          &kp P    &none
-                &sk LCTRL &kp A    &kp S     &kp D     &kp F         &kp G                   &kp H           &kp J         &kp K       &kp L          &kp SEMI &none
-                &sk LSHFT &kp Z    &kp X     &kp C     &kp V         &kp B                   &kp N           &kp M         &kp COMMA   &kp DOT        &kp FSLH &kp CAPS
-                                   &none     &none                                                                         &kp DLTROW  &kp RPLACE
-                                                       &kp LGUI      &lt LWR SPACE           &ht_hld RSE TAB &mt LSHFT RET
-                                                       &kp LALT      &none                   &none           &kp BSPC
-                                                       &none         &none                   &none           &none
+                &none   &none         &none        &none &none       &none                   &none           &none         &none     &none   &none            &none
+                &none   &kp Q         &kp W        &kp E &kp R       &kp T                   &kp Y           &kp U         &kp I     &kp O   &kp P            &none
+                &none   &bhm LSHIFT A &bhm LCTRL S &kp D &bhm LGUI F &kp G                   &kp H           &bhm RGUI J   &kp K     &kp L   &bhm RSHIFT SEMI &none
+                &none   &kp Z         &kp X        &kp C &kp V       &kp B                   &kp N           &kp M         &kp COMMA &kp DOT &kp FSLH         &none
+                                      &none        &none                                                                   &none     &none
+                                                         &kp LGUI    &lt LWR SPACE           &ht_hld RSE TAB &mt LSHFT RET
+                                                         &kp LALT    &none                   &none           &kp BSPC
+                                                         &none       &none                   &none           &none
             >;
         };
 
@@ -45,8 +55,8 @@
             bindings = <
                 &none     &none    &none     &none     &none         &none                   &none       &none         &none       &none          &none    &none
                 &none     &kp EXCL &kp AT    &kp PLUS  &kp EQUAL     &kp BSLH                &kp GRAVE   &kp LBRC      &kp RBRC    &none          &none    &none
-                &sk LCTRL &kp AMPS &kp HASH  &kp MINUS &kp LS(MINUS) &kp PIPE                &kp TILDE   &kp LS(N9)    &kp LS(N0)  &kp SQT        &kp DQT  &none
-                &sk LSHFT &kp STAR &kp PRCNT &kp CARET &kp DLLR      &kp FSLH                &none       &kp LBKT      &kp RBKT    &none          &none    &none
+                &none     &kp AMPS &kp HASH  &kp MINUS &kp LS(MINUS) &kp PIPE                &kp TILDE   &kp LS(N9)    &kp LS(N0)  &kp SQT        &kp DQT  &none
+                &none     &kp STAR &kp PRCNT &kp CARET &kp DLLR      &kp FSLH                &none       &kp LBKT      &kp RBKT    &none          &none    &none
                                    &none     &none                                                                     &none       &none
                                                        &trans        &trans                  &trans      &trans
                                                        &trans        &trans                  &trans      &kp DEL
@@ -56,14 +66,14 @@
 
         raise_layer {
             bindings = <
-                &none     &none    &none     &none     &none         &none                   &none       &none         &none       &none          &none    &none
-                &none     &none    &kp N7    &kp N8    &kp N9        &none                   &kp PG_UP   &kp LC(LEFT)  &kp UP      &kp LC(RIGHT)  &none    &kp K_VOL_UP
-                &sk LCTRL &none    &kp N4    &kp N5    &kp N6        &none                   &kp PG_DN   &kp LEFT      &kp DOWN    &kp RIGHT      &none    &kp K_VOL_DN
-                &sk LSHFT &none    &kp N1    &kp N2    &kp N3        &kp N0                  &kp NXTSCRN &kp MXSCRN    &kp FLLSCRN &kp LG(LS(UP)) &none    &kp K_MUTE
-                                   &none     &none                                                                     &none       &none
-                                                       &trans        &trans                  &trans      &trans
-                                                       &trans        &trans                  &trans      &trans
-                                                       &trans        &trans                  &trans      &trans
+                &none      &none    &none     &none     &none         &none                   &none       &none         &none       &none          &none    &none
+                &bt BT_CLR &none    &kp N7    &kp N8    &kp N9        &kp DLTROW              &kp PG_UP   &kp LC(LEFT)  &kp UP      &kp LC(RIGHT)  &kp ESC  &none
+                &none      &none    &kp N4    &kp N5    &kp N6        &kp RPLACE              &kp PG_DN   &kp LEFT      &kp DOWN    &kp RIGHT      &none    &none
+                &none      &none    &kp N1    &kp N2    &kp N3        &kp N0                  &kp NXTSCRN &kp MXSCRN    &kp FLLSCRN &kp LG(LS(UP)) &kp CAPS &none
+                                    &none     &none                                                                     &none       &none
+                                                        &trans        &trans                  &trans      &trans
+                                                        &trans        &trans                  &trans      &trans
+                                                        &trans        &trans                  &trans      &trans
             >;
         };
     };

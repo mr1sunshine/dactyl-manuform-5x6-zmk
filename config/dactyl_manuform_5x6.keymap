@@ -66,11 +66,11 @@
 
         raise_layer {
             bindings = <
-                &none      &none    &none     &none     &none         &none                   &none       &none         &none       &none          &none    &none
-                &bt BT_CLR &none    &kp N7    &kp N8    &kp N9        &kp DLTROW              &kp PG_UP   &kp LC(LEFT)  &kp UP      &kp LC(RIGHT)  &kp ESC  &none
-                &none      &none    &kp N4    &kp N5    &kp N6        &kp RPLACE              &kp PG_DN   &kp LEFT      &kp DOWN    &kp RIGHT      &none    &none
-                &none      &none    &kp N1    &kp N2    &kp N3        &kp N0                  &kp NXTSCRN &kp MXSCRN    &kp FLLSCRN &kp LG(LS(UP)) &kp CAPS &none
-                                    &none     &none                                                                     &none       &none
+                &none &none      &none     &none     &none         &none                   &none       &none         &none       &none          &none    &none
+                &none &bt BT_CLR &kp N7    &kp N8    &kp N9        &kp DLTROW              &kp PG_UP   &kp LC(LEFT)  &kp UP      &kp LC(RIGHT)  &kp ESC  &none
+                &none &none      &kp N4    &kp N5    &kp N6        &kp RPLACE              &kp PG_DN   &kp LEFT      &kp DOWN    &kp RIGHT      &none    &none
+                &none &none      &kp N1    &kp N2    &kp N3        &kp N0                  &kp NXTSCRN &kp MXSCRN    &kp FLLSCRN &kp LG(LS(UP)) &kp CAPS &none
+                                 &none     &none                                                                     &none       &none
                                                         &trans        &trans                  &trans      &trans
                                                         &trans        &trans                  &trans      &trans
                                                         &trans        &trans                  &trans      &trans
